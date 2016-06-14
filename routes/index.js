@@ -9,6 +9,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/scrabble/chart', Controller.getChart);
 router.get('/scrabble/score', Controller.getScore);
+// router.post('/scrabble/score', Controller.postScore);
+
+router.post('/scrabble/score',function(request,response){
+var query1 = request.body.word;
+Controller.postScore(request, response, query1);
+});
+
 
 
 module.exports = router;

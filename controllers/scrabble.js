@@ -1,4 +1,4 @@
-var ScrabbleScorer = require("./scrabble_scorer.js");
+var ScrabbleScorer = require("../lib/scrabble_scorer.js");
 var scrabble = new ScrabbleScorer;
 
 var ScrabbleController = {
@@ -14,17 +14,27 @@ var ScrabbleController = {
       K: 5,
       J: 8, X: 8,
       Q: 10, Z: 10
-    };
-    response.render('scrabble/chart', locals)
-  }
+    }
+    response.render('scrabble/chart', locals);
+  },
 
   getScore: function (request, response) {
     var locals = {}
 
     locals.title = "Score Words Here!"
 
-    response.render('scrabble/score', locals)
-  };
+    response.render('scrabble/score', locals);
+  },
+
+  postScore: function (request, response, word) {
+    var locals = {}
+
+    locals.title = "Score Words Here!"
+    locals.word = word + ": "
+    locals.score = scrabble.score(word);
+
+    response.render('scrabble/score', locals);
+  }
 }
 
 module.exports = ScrabbleController

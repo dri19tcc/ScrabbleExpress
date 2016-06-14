@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-  </body>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <form action="/scrabble/score" method="post">
+    Word:<br/>
+    <input type="text" name="word"><br/>
+    <input type="submit" value="Submit">
+  </form>
+  <% if (typeof word !== 'undefined') { %>
+    <h3><%= word + score %></h3>
+  <% } %>
+</body>
 </html>
