@@ -15,6 +15,8 @@ var ScrabbleController = {
       J: 8, X: 8,
       Q: 10, Z: 10
     }
+    locals.params = "stuff here"
+    
     response.render('scrabble/chart', locals);
   },
 

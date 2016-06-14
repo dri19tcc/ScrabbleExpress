@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "hello": "clear; node tasks/hello.js",
+    "db:drop": "dropdb scrabble_express",
+    "db:create": "createdb scrabble_express",
+    "db:schema": "clear; node tasks/load_schema",
+    "db:seed": "",
+    "db:reset": ""
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -13,7 +19,8 @@
     "express": "~4.13.1",
     "jasmine-node": "^1.14.5",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "massive": "^2.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"

@@ -16,6 +16,9 @@ var query1 = request.body.word;
 Controller.postScore(request, response, query1);
 });
 
-
+router.get('/scrabble/score/:word', function(request, response) {
+  var word = request.params.word;
+  Controller.postScore(request, response, word);
+});
 
 module.exports = router;
