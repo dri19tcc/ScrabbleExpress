@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/scrabble/chart', Controller.getChart);
-
+router.get('/scrabble/score', Controller.getScore);
 
 
 module.exports = router;

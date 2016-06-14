@@ -1,3 +1,6 @@
+var ScrabbleScorer = require("./scrabble_scorer.js");
+var scrabble = new ScrabbleScorer;
+
 var ScrabbleController = {
   getChart: function (request, response) {
     var locals = {}
@@ -16,8 +19,12 @@ var ScrabbleController = {
   }
 
   getScore: function (request, response) {
-    
-  }
+    var locals = {}
+
+    locals.title = "Score Words Here!"
+
+    response.render('scrabble/score', locals)
+  };
 }
 
 module.exports = ScrabbleController
