@@ -12,9 +12,11 @@ var ScrabbleController = {
       J: 8, X: 8,
       Q: 10, Z: 10
     };
-
     response.render('scrabble/chart', locals)
+  }
 
+  getScore: function (request, response) {
+    
   }
 }
 
