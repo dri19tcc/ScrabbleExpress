@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <h1><%= title %></h1>
+  <table>
+    <thead>
+      <tr>
+        <td>Letter</td>
+        <td>Score</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var score in scores) { %>
+        <tr>
+          <td><%= score; %></td>
+          <td><%= scores[score]; %></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+</body>
+</html>
